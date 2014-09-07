@@ -1,0 +1,12 @@
+%body
+%section.scans
+  %h1 Available Scans:
+  - $config.each do |scan, attrs|
+    %a(href="results/#{scan}")
+      = "#{attrs['name']}"
+    %br
+    = "Description: #{attrs['description']}"
+    %br
+    = "Identifier: #{scan}"
+    %p
+
