@@ -1,10 +1,37 @@
+th.headerSortUp { 
+	background-color: #3399FF; 
+}
+
+th.headerSortDown { 
+	background-color: #3399FF; 
+} 
+
+th.header { 
+	cursor: pointer; 
+	font-weight: bold; 
+	background-repeat: no-repeat; 
+	background-position: center left; 
+	padding-left: 20px; 
+	border-right: 1px solid #dad9c7; 
+	margin-left: -1px; 
+} 
+
+table thead tr th {
+	background-color: #e6EEEE;
+}
+
 table {
-	color: black;
-	border: 1px solid black;
+	width: 100%;
+	text-align: left;
+	font-family: arial;
+	border-collapse: collapse;
+	border:1px solid #000000;
 }
 
-td {
-	padding: 15px;
+table td {
+	border:1px solid #000000;
 }
 
-
+table.basic {
+	text-align: center;
+}

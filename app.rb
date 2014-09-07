@@ -10,6 +10,6 @@ end
 get '/scan_report.json' do
   content_type :json
 
-  ARPScan('-l').to_hash[:hosts].to_json
+  ARPScan('-l').to_hash.to_json
 
 end
