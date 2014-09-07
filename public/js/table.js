@@ -11,12 +11,29 @@ $( document ).ready(function() {
 
 	$.getJSON("/scan/" + document.location.pathname.split("/")[2], callback);
 
+	$.tablesorter.addParser({
+		id: "ipAddress",
+		is: function (s) {
+			return /^\d{1,3}[\.]\d{1,3}[\.]\d{1,3}[\.]\d{1,3}$/.test(s);
+		},
+		format: function (s) {
+			var octs = s.split('.');
+			var sum = 0;
+			for (i in octs) {
+				sum += octs[i] * Math.pow(256, (octs.length - 1) - i);
+			}
+			return sum;
+		},
+		type: "numeric"
+	});	
+
 	function callback(data)
 	{
 		var info=[];
 		info.push(data);
 		var hosts_options = {
 			source: data.hosts,
+			sortList: [[0,0]],
 			headers: {
 				0: {
 					sorter: 'ipAddress'
