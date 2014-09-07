@@ -1,9 +1,9 @@
 th.headerSortUp { 
-	background-color: #3399FF; 
+	background-color: #DAE5F4; 
 }
 
 th.headerSortDown { 
-	background-color: #3399FF; 
+	background-color: #DAE5F4; 
 } 
 
 th.header { 
@@ -26,12 +26,21 @@ table {
 	font-family: arial;
 	border-collapse: collapse;
 	border:1px solid #000000;
+	text-align: center;
 }
 
 table td {
 	border:1px solid #000000;
 }
+table hr {
+	border:1px solid #000000;
+}
 
-table.basic {
-	text-align: center;
+table.basic td:nth-child(even) {
+	background-color: #eeeeee
+}
+
+tr:nth-child(even) {
+	background-color: #eeeeee
+
 }
