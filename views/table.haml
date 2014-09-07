@@ -1,0 +1,19 @@
+%script(src="/js/jquery.min.js")
+%script(src="/js/jsonTable.js")
+ 
+%link(rel="stylesheet" type="text/css" href="css/table.css")
+ 
+%table{:id => "dataTable", :style => "color: black;", :border => "1px solid black;"}
+
+
+  :javascript
+      var options = {
+        source: "/scan_report.json",
+        };
+      $("#dataTable").jsonTable({
+        head : ['IP Address', 'MAC', 'OUI'], // Goes on the <thead>
+        json : ['ip_addr', 'mac', 'oui'] //json identities from the loaded json object
+      });                    // NOTE : an '*' identity will generate an autoincremented column
+
+      $("#dataTable").jsonTableUpdate(options);
+
