@@ -9,7 +9,7 @@ $( document ).ready(function() {
 		json : ['interface', 'datalink', 'version', 'range_size', 'reply_count','scan_rate', 'scan_time'] //json identities from the loaded json object
 	});                    // NOTE : an '*' identity will generate an autoincremented column
 
-	$.getJSON("/scan/" + document.location.pathname.split("/")[2], callback);
+	$.getJSON("/json/" + document.location.pathname.split("/")[2], callback);
 
 	$.tablesorter.addParser({
 		id: "ipAddress",

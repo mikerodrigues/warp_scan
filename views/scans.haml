@@ -5,7 +5,7 @@
 %body{ :bgcolor => '#E6EEEE' }
   %h2 Available Scans:
   - $config.each do |scan, attrs|
-    %a(href="results/#{scan}")
+    %a(href="table/#{scan}")
       %h3  #{attrs['name']}
     %ul
       %li <b>Description:</b> #{attrs['description']}

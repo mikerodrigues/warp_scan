@@ -23,24 +23,21 @@ class WarpScan < Sinatra::Base
   end
 
   get '/' do
-
     haml :scans
-
-    #haml :table
   end
 
-  get '/results/:scan' do
+  get '/table/:scan' do
     haml :table
   end
 
-  get '/scan' do
+  get '/json' do
     content_type :json
     puts $config
     args = $config['default']['args']
     ARPScan(args).to_hash.to_json
   end
 
-  get '/scan/:scan' do
+  get '/json/:scan' do
     content_type :json
     puts params[:scan]
     puts $config[params[:scan]]['args']
