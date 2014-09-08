@@ -3,12 +3,15 @@
 %script(src="/js/jsonTable.js")
 %script(src="/js/table.js")
 %link(rel="stylesheet" type="text/css" href="/css/table.css")
+%title WarpScan
+%a{:href => "/"}
+  %h1 WarpScan
+%hr
 %body
-  %h1 ARPScan Report
-  %hr
-  %h2 Scan Metadata:
+  %h2 Scan Report
+  %h3 Scan Metadata:
   %table{:id => "infoTable", :class => "basic"}
   %p
-  %h2 Host data:
+  %h3 Host data:
   %table{:id => "hostsTable", :class => "tablesorter"}
   %p

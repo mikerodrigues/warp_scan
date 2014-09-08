@@ -12,7 +12,7 @@ th.header {
 	background-repeat: no-repeat; 
 	background-position: center left; 
 	padding-left: 20px; 
-	border-right: 1px solid #dad9c7; 
+	border-right: 1px solid #000000; 
 	margin-left: -1px; 
 } 
 
@@ -37,10 +37,10 @@ table hr {
 }
 
 table.basic td:nth-child(even) {
-	background-color: #eeeeee
+	background-color: #eeeeee;
 }
 
 tr:nth-child(even) {
-	background-color: #eeeeee
+	background-color: #eeeeee;
 
 }

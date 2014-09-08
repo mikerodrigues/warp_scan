@@ -1,12 +1,14 @@
-%body
-%section.scans
-  %h1 Available Scans:
+%title WarpScan
+%a{:href => "/"}
+  %h1 WarpScan
+%hr
+%body{ :bgcolor => '#E6EEEE' }
+  %h2 Available Scans:
   - $config.each do |scan, attrs|
     %a(href="results/#{scan}")
-      = "#{attrs['name']}"
-    %br
-    = "Description: #{attrs['description']}"
-    %br
-    = "Identifier: #{scan}"
+      %h3  #{attrs['name']}
+    %ul
+      %li <b>Description:</b> #{attrs['description']}
+      %li <b>Identifier:</b> #{scan}
     %p
 
