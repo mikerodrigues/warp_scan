@@ -32,15 +32,12 @@ class WarpScan < Sinatra::Base
 
   get '/json' do
     content_type :json
-    puts $config
     args = $config['default']['args']
     ARPScan(args).to_hash.to_json
   end
 
   get '/json/:scan' do
     content_type :json
-    puts params[:scan]
-    puts $config[params[:scan]]['args']
     args = $config[params[:scan]]['args']
     ARPScan(args).to_hash.to_json
   end
