@@ -8,37 +8,28 @@ class WarpScan < Sinatra::Base
 
   set :static, true
   set :root, File.dirname(__FILE__)
-  set :public, 'public'
-
+  #set :public, 'public'
 
   $config = YAML.load(File.read('./config.yml'))
-  @scan_table =  []
-  $config.each do |id, attrs|
-    entry = []
-    entry << id
-    attrs.each do |k, v|
-      entry << v
-    end
-    @scan_table << entry
-  end
 
-  get '/' do
+  show_scans = lambda do
     haml :scans
   end
 
-  get '/table/:scan' do
+  show_table = lambda do
     haml :table
   end
 
-  get '/json' do
+  get_json = lambda do
     content_type :json
-    args = $config['default']['args']
-    ARPScan(args).to_hash.to_json
-  end
-
-  get '/json/:scan' do
-    content_type :json
+    params[:scan] ||= 'default'
     args = $config[params[:scan]]['args']
     ARPScan(args).to_hash.to_json
   end
+
+  get '/', &show_scans
+  get '/table/:scan', &show_table
+  get '/json', &get_json
+  get '/json/:scan', &get_json
+
 end
