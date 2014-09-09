@@ -1,4 +1,8 @@
 $( document ).ready(function() {
-	$('.hostsTable').DataTable();
+	$('.hostsTable').DataTable( {
+		columnDefs: [
+			{ type: 'ip-address', targets: 0}
+		]
+	});
 });
 
