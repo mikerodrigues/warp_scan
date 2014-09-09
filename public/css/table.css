@@ -42,5 +42,8 @@ table.basic td:nth-child(even) {
 
 tr:nth-child(even) {
 	background-color: #eeeeee;
+}
 
+h1 {
+	font-family: "Courier New", Courier, monospace
 }
