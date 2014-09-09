@@ -3,6 +3,7 @@ require 'json'
 require 'sinatra'
 require 'haml'
 require 'yaml'
+require './lib/table_creator'
 
 class WarpScan < Sinatra::Base
 
@@ -20,16 +21,16 @@ class WarpScan < Sinatra::Base
     haml :table
   end
 
-  get_json = lambda do
-    content_type :json
+  run_scan = lambda do
     params[:scan] ||= 'default'
     args = $config[params[:scan]]['args']
-    ARPScan(args).to_hash.to_json
+    scan = ARPScan(args).to_hash
+    info_table = ::TableCreator.create_info_table(scan)
+    hosts_table = ::TableCreator.create_hosts_table(scan[:hosts])
+    haml :table, :locals => {:info_table => info_table, :hosts_table => hosts_table}
   end
 
   get '/', &show_scans
-  get '/table/:scan', &show_table
-  get '/json', &get_json
-  get '/json/:scan', &get_json
+  get '/scan/:scan', &run_scan
 
 end

@@ -44,6 +44,6 @@ tr:nth-child(even) {
 	background-color: #eeeeee;
 }
 
-h1 {
+h1, h7{
 	font-family: "Courier New", Courier, monospace
 }

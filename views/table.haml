@@ -1,17 +1,17 @@
-%script(src="/js/jquery.min.js")
-%script(src="/js/jquery.tablesorter.min.js")
-%script(src="/js/jsonTable.js")
+%script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+%script(src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js")
 %script(src="/js/table.js")
 %link(rel="stylesheet" type="text/css" href="/css/table.css")
-%title WarpScan
+%title wARPscan
 %a{:href => "/"}
-  %h1 WarpScan
+  %h1 wARPscan
+%h7* Web-based ARP scanner
 %hr
 %body
   %h2 Scan Report
   %h3 Scan Metadata:
-  %table{:id => "infoTable", :class => "basic"}
+  = info_table
   %p
   %h3 Host data:
-  %table{:id => "hostsTable", :class => "tablesorter"}
+  = hosts_table
   %p

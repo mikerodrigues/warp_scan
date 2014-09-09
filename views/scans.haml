@@ -1,11 +1,14 @@
-%title WarpScan
+%script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+%link(rel="stylesheet" type="text/css" href="/css/scans.css")
+%title wARPscan
 %a{:href => "/"}
-  %h1 WarpScan
+  %h1 wARPscan
+%h7 * Web-based ARP scanner
 %hr
 %body{ :bgcolor => '#E6EEEE' }
   %h2 Available Scans:
   - $config.each do |scan, attrs|
-    %a(href="table/#{scan}")
+    %a(href="scan/#{scan}")
       %h3  #{attrs['name']}
     %ul
       %li <b>Description:</b> #{attrs['description']}
