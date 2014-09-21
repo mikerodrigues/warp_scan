@@ -1,12 +1,12 @@
-th.headerSortUp { 
+table th.headerSortUp { 
 	background-color: #DAE5F4; 
 }
 
-th.headerSortDown { 
+table th.headerSortDown { 
 	background-color: #DAE5F4; 
 } 
 
-th.header { 
+table th header { 
 	cursor: pointer; 
 	font-weight: bold; 
 	background-repeat: no-repeat; 
@@ -16,7 +16,7 @@ th.header {
 	margin-left: -1px; 
 } 
 
-table thead tr th {
+table thead tr th  {
 	background-color: #e6EEEE;
 }
 
@@ -32,7 +32,7 @@ table {
 table td {
 	border:1px solid #000000;
 }
-table hr {
+table.hr {
 	border:1px solid #000000;
 }
 

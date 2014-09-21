@@ -9,7 +9,7 @@ $( document ).ready(function() {
 	$(document).tooltip({
 	    items:'table.hostsTable tr td.mac',
 	    tooltipClass:'mac-tip',
-	    position: { my: "left+40 top", at: "left center" },
+	    position: { my: "left+10 top", at: "left center" },
 	    content:function(callback) {
 	        var elem = $(this);
 	        var mac = $(this).text();
@@ -20,6 +20,15 @@ $( document ).ready(function() {
 	        });
 	    },
 	});
+
+        $("tr").not(':first').hover(
+          function () {
+            $(this).css("background","yellow");
+          }, 
+          function () {
+            $(this).css("background","");
+          }
+        );
 
 //	function callAjax(elem, ip) {
 //	        $.getJSON('/ip/' + ip, {}, function(data) {

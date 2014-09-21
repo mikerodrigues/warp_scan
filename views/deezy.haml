@@ -1,20 +1,22 @@
-%div
-  %table>
-    %th
-      %tr 
-        %td Hostname
-        %td IP
-        %td ITG ID
-        %td Room
-        %td UID
-        %td Notes
-        %td Enabled?
-    %tb>
-      %tr 
-        %td= object['hostname']
-        %td= object['ip']
-        %td= object['itg_id']
-        %td= object['room']
-        %td= object['uid']
-        %td= object['notes']
-        %td= object['enabled']
+%link(rel="stylesheet" type="text/css" href="/css/table.css")
+%link(rel="stylesheet" type="text/css" href="/css/scans.css")
+%link(rel="stylesheet" type="text/css" href="/css/jquery-ui.css")
+%table>
+  %th
+    %tr 
+      %td Hostname
+      %td IP
+      %td ITG ID
+      %td Room
+      %td UID
+      %td Notes
+      %td Enabled?
+  %tb>
+    %tr 
+      %td= object['hostname']
+      %td= object['ip'] == "" ? object['ip'] :  "Dynamic"
+      %td= object['itgid']
+      %td= object['room'] || "Go find it!"
+      %td= object['uid'] || "Figure out who owns me!"
+      %td= object['notes'] || "This entry needs some notes."
+      %td= object['enabled']
