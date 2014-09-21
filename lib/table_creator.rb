@@ -1,3 +1,5 @@
+require_relative './deezy_bridge'
+
 module TableCreator
   def self.create_hosts_table(hosts_hash)
     array = []
@@ -7,6 +9,7 @@ module TableCreator
     array << '      <th>IP</th>'
     array << '      <th>MAC</th>'
     array << '      <th>OUI</th>'
+    array << '      <th>Known?</th>'
     array << '    </tr>'
     array << '  </thead>'
     hosts_hash.each do |hash|
@@ -22,6 +25,13 @@ module TableCreator
     hash.each_key do |k|
       array << "    <td title='' class='#{k}'>" + hash[k] + '</td>'
     end
+
+    if DeezyBridge.mac_to_host(hash[:mac])
+      array << "<td title='' class='known'>Yes</td>"
+    else
+      array << "<td title='' class='known'>No</td>"
+    end
+
     array << '  </tr>'
   end
 
