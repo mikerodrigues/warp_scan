@@ -20,7 +20,7 @@ module TableCreator
     array = []
     array << '  <tr>'
     hash.each_key do |k|
-      array << "    <td class='#{k}'>" + hash[k] + '</td>'
+      array << "    <td title='' class='#{k}'>" + hash[k] + '</td>'
     end
     array << '  </tr>'
   end
