@@ -8,21 +8,22 @@ $( document ).ready(function() {
 
 	$(document).tooltip({
 		items:'table.hostsTable tr td.mac',
-		tooltipClass:'mac-tip',
 		position: { my: "left+10 top", at: "left center" },
 		content:function(callback) {
 		    console.log(this)
 			var elem = $(this);
 			var mac = $(this).text();
-			$.get('/mac/' + mac, {}, function(data) {
+			$.get('/mac/' + mac)
+				.always(	function(data)	{
 				elem.tooltip({
-					content: data,
+					content: data + "string",
+					position: { my: "left-10 bottom", at: "right center" }
 				});
 			});
 		},
 	});
 
-	$("tr").not(':first').hover(
+	$("table.hostsTable tr").not(':first').hover(
 			function () {
 				$(this).css("background","yellow");
 			}, 
