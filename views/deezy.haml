@@ -12,9 +12,9 @@
   %tb>
     %tr 
       %td= object['hostname']
-      %td= object['ip'] == "" ? object['ip'] :  "Dynamic"
+      %td= object['ip'] == "" ? "Dynamic" : object['ip']
       %td= object['itgid']
-      %td= object['room'] || "Go find it!"
-      %td= object['uid'] || "Figure out who owns me!"
-      %td= object['notes'] || "This entry needs some notes."
+      %td= object['room'] == "" ? "Go find it!" : object['room']
+      %td= object['uid'] == "" ? "Figure out who owns me!" : object['uid']
+      %td= object['notes'] == "" ? "This entry needs some notes." : object['notes']
       %td= object['enabled']
