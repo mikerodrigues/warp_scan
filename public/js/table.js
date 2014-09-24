@@ -27,6 +27,25 @@ $( document ).ready(function() {
 		}
 	});
 	});
+	
+	// Create the tooltip listeners on IP address cells
+	//
+	$('table.hostsTable tr td.ip_addr').each(function() {
+		var tipContent = $(this).text();
+		$(this).qtip({
+		content: {
+			text: 'Loading...',
+			ajax: {
+				url: '/ip/' + $(this).text(),
+				type: 'GET',
+				data: {},
+				}
+		},
+		style: {
+			width: 600
+		}
+	});
+	});
 
 	// Setup highlighting for selected cell
 	//
