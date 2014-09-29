@@ -20,6 +20,9 @@ $( document ).ready(function() {
 				url: '/mac/' + $(this).text(),
 				type: 'GET',
 				data: {},
+				error: function() {
+					this.set('content.text', "No data.");
+				}
 			}
 		},
 		style: {
