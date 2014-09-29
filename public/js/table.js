@@ -20,7 +20,7 @@ $( document ).ready(function() {
 				url: '/mac/' + $(this).text(),
 				type: 'GET',
 				data: {},
-				}
+			}
 		},
 		style: {
 			width: 600
@@ -39,7 +39,7 @@ $( document ).ready(function() {
 				url: '/ip/' + $(this).text(),
 				type: 'GET',
 				data: {},
-				}
+			}
 		},
 		style: {
 			width: 600
@@ -51,7 +51,7 @@ $( document ).ready(function() {
 	//
 	$("table.hostsTable tr").not(':first').hover(
 			function () {
-				$(this).css("background","yellow");
+				$(this).css("background","#ffff66");
 			}, 
 			function () {
 				$(this).css("background","");
