@@ -51,7 +51,7 @@ $( document ).ready(function() {
 	//
 	$("table.hostsTable tr").not(':first').hover(
 			function () {
-				$(this).css("background","#ffff66");
+				$(this).css("background","#ffffa3");
 			}, 
 			function () {
 				$(this).css("background","");
