@@ -37,6 +37,7 @@ module TableCreator
     array << '      <th>Hosts Responding</th>'
     array << '      <th>Scan Rate</th>'
     array << '      <th>Scan Duration</th>'
+    array << '      <th>Scan Arguments</th>'
     array << '    </tr>'
     array << '  </thead>'
     array << create_info_row(info_hash)
@@ -54,6 +55,7 @@ module TableCreator
     array << '    <td>' + hash[:reply_count].to_s + '</td>'
     array << '    <td>' + hash[:scan_rate].to_s + '</td>'
     array << '    <td>' + hash[:scan_time].to_s + '</td>'
+    array << '    <td>' + hash[:arguments].to_s + '</td>'
     array << '  </tr>'
   end
 
