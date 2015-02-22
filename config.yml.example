@@ -1,8 +1,8 @@
 default:
-        args: "-l"
+        args: "--localnet --ignoredups"
         name: "Default scan"
         description: "Scans the local subnet on the first interface found."
 subnet2:
-        args: "-I eth1 -l"
+        args: "-I eth1 --localnet --ignoredups"
         name: "Subnet 2 Scan"
         description: "Scans the 2nd Subnet."
