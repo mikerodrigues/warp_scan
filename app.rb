@@ -9,6 +9,7 @@ class WarpScan < Sinatra::Base
 
   set :static, true
   set :root, File.dirname(__FILE__)
+  set :bind, '0.0.0.0'
   #set :public, 'public'
 
   $config = YAML.load(File.read('./config.yml'))
@@ -27,7 +28,7 @@ class WarpScan < Sinatra::Base
     scan = ARPScan(args).to_hash
     info_table = ::TableCreator.create_info_table(scan)
     hosts_table = ::TableCreator.create_hosts_table(scan[:hosts])
-    haml :table, :locals => {:info_table => info_table, :hosts_table => hosts_table}
+    haml :table, :locals => {:info_table => info_table, :hosts_table => hosts_table, :args => args}
   end
 
   get '/', &show_scans
