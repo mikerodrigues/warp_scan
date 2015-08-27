@@ -32,6 +32,12 @@ table {
 table td {
 	border:1px solid #000000;
 }
+
+td {
+	padding: 10px;
+}
+
+
 table.hr {
 	border:1px solid #000000;
 }
@@ -46,4 +52,10 @@ tr:nth-child(even) {
 
 h1, h7{
 	font-family: "Courier New", Courier, monospace
+}
+
+.selected {
+	background: #FFFFa3	!important;
+	font-weight: bold;
+	transition: background-color 0.7s ease, font-weight 2s ease;
 }

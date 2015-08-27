@@ -45,8 +45,8 @@ module TableCreator
     array << '      <th>Version</th>'
     array << '      <th>Hosts Scanned</th>'
     array << '      <th>Hosts Responding</th>'
-    array << '      <th>Scan Rate</th>'
-    array << '      <th>Scan Duration</th>'
+    array << '      <th>Scan Rate (hosts/sec)</th>'
+    array << '      <th>Scan Duration (sec)</th>'
     array << '    </tr>'
     array << '  </thead>'
     array << create_info_row(info_hash)

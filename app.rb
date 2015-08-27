@@ -40,16 +40,15 @@ class WarpScan < Sinatra::Base
   end
 
   by_mac = lambda do
-    #content_type :json
-    puts DeezyBridge.mac_to_host(params[:mac])
+    # content_type :json
+    # puts DeezyBridge.mac_to_host(params[:mac])
     object = DeezyBridge.mac_to_host(params[:mac])
     haml :deezy, :locals => {:object => object}
   end
     
   by_ip = lambda do
-    puts DeezyBridge.ip_to_host(params[:ip])
-    ##content_type :json
-    DeezyBridge.ip_to_host(params[:ip]).to_json
+    # content_type :json
+    # DeezyBridge.ip_to_host(params[:ip]).to_json
     object = DeezyBridge.mac_to_host(params[:mac])
     haml :deezy, :locals => {:object => object}
   end

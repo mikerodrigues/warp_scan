@@ -19,14 +19,21 @@ $( document ).ready(function() {
 			ajax: {
 				url: '/mac/' + $(this).text(),
 				type: 'GET',
-				data: {},
-				error: function() {
-					this.set('content.text', "No data.");
-				}
+				data: {}
 			}
 		},
+		position: {
+			my: 'top left', // top-left of tool-tip
+			at: 'bottom left', // at bottom-left of element
+		},
 		style: {
-			width: 600
+			width: 900
+		},
+		show: {
+			delay: 600,
+			effect: function() {
+				$(this).fadeIn(500);
+			}
 		}
 	});
 	});
@@ -44,8 +51,12 @@ $( document ).ready(function() {
 				data: {},
 			}
 		},
+		position: {
+			my: 'top left', // top-left of tool-tip
+			at: 'bottom left', // at bottom-left of element
+		},
 		style: {
-			width: 600
+			width: 900
 		}
 	});
 	});
@@ -54,10 +65,12 @@ $( document ).ready(function() {
 	//
 	$("table.hostsTable tr").not(':first').hover(
 			function () {
-				$(this).css("background","#ffffa3");
+				//$(this).css("background","#ffffa3");
+				$(this).toggleClass('selected');
 			}, 
 			function () {
-				$(this).css("background","");
+				//$(this).css("background","");
+				$(this).toggleClass('selected');
 			}
 			);
 
