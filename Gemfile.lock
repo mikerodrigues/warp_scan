@@ -2,21 +2,23 @@ GEM
   remote: https://rubygems.org/
   specs:
     arp_scan (0.1.0)
-    haml (5.0.4)
+    haml (5.1.2)
       temple (>= 0.8.0)
       tilt
-    json (2.1.0)
-    mustermann (1.0.3)
-    rack (2.0.6)
-    rack-protection (2.0.4)
+    json (2.3.1)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.3)
+    rack-protection (2.0.8.1)
       rack
-    sinatra (2.0.4)
+    ruby2_keywords (0.0.2)
+    sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.4)
+      rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    temple (0.8.0)
-    tilt (2.0.8)
+    temple (0.8.2)
+    tilt (2.0.10)
 
 PLATFORMS
   ruby
@@ -25,7 +27,8 @@ DEPENDENCIES
   arp_scan
   haml
   json
+  rack (>= 2.1.4)
   sinatra
 
 BUNDLED WITH
-   1.16.1
+   2.1.4
