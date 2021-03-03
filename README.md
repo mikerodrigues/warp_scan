@@ -9,7 +9,8 @@ A Sinatra Web Wrapper for arp_scan
 
 1. Create a config file in the root, see `config.yml.example`
 2. `bundle install`
-3. `rackup`
+3. Setup arp-scan (See https://github.com/mikerodrigues/arp_scan)
+4. `rackup`
 
 For some reason the IP address sorting in the jQuery plugin 'tablesorter'
 doesn't seem to work too well. If you can fix it, send me a pull request.
