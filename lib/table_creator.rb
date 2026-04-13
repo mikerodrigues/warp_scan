@@ -45,6 +45,7 @@ module TableCreator
   end
 
   def self.create_info_row(hash)
+    puts hash
     array = []
     array << '  <tr>'
     array << '    <td>' + hash[:interface] + '</td>'
