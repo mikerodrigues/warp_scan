@@ -7,7 +7,7 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
-    json (2.19.3)
+    json (2.21.2)
     logger (1.7.0)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
@@ -43,7 +43,7 @@ PLATFORMS
 DEPENDENCIES
   arp_scan
   haml
-  json (>= 2.15.2.1)
+  json (>= 2.19.9)
   puma (>= 7.2.1)
   rack (>= 3.2.6)
   rack-session (>= 2.1.2)
