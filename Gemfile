@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'haml'
 gem 'arp_scan'
-gem 'json', '>= 2.15.2.1'
+gem 'json', '>= 2.19.9'
 gem 'rack', '>= 3.2.6'
 gem 'rack-session', '>= 2.1.2'
 
